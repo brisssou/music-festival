@@ -12,6 +12,7 @@ class Track extends \MusicFestival\Entity {
   const ATTR_MBID = 'mbid';
   const ATTR_TAGS = 'tags';
   const ATTR_LINKS = 'links';
+  const ATTR_YEAR = 'year';
 
   protected $links = array();
 
@@ -25,6 +26,7 @@ class Track extends \MusicFestival\Entity {
       self::ATTR_COVER,
       self::ATTR_TAGS,
       self::ATTR_LINKS,
+      self::ATTR_YEAR
     ));
 
     $this->setAttribute(self::ATTR_TAGS, array());
@@ -94,6 +96,13 @@ class Track extends \MusicFestival\Entity {
       }
     }
     return $links;
+  }
+
+  /**
+   * @return string
+   */
+  function getYear() {
+    return $this->getAttribute(self::ATTR_YEAR);
   }
 
   /**
