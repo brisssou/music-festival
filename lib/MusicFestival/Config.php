@@ -14,7 +14,6 @@ class Config {
   private static $_instance = null;
 
   function __construct() {
-    \Symfony\Component\Yaml\Yaml::enablePhpParsing();
     $this->settings = \Symfony\Component\Yaml\Yaml::parse(\MUSICFESTIVAL_DIR.'/config/settings.yml');
 
     $this->lastfm = new \Lastfm\Client($this->settings['lastfm']['key']);
