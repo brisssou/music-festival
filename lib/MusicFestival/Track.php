@@ -99,6 +99,20 @@ class Track extends \MusicFestival\Entity {
   }
 
   /**
+   * @return array<Link>
+   */
+  function setLinks($links = false) {
+    $this_links = array()
+    foreach($links as $url) {
+      $link = \MusicFestival\Link\Factory::fromUrl($url);
+      if($link->isValid()) {
+        $this_links[] = $link;
+      }
+    }
+    $this->setAttribute(self::ATTR_LINKS) = $this_links;
+  }
+
+  /**
    * @return string
    */
   function getYear() {
