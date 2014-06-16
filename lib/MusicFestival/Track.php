@@ -102,7 +102,7 @@ class Track extends \MusicFestival\Entity {
    * @return array<Link>
    */
   function setLinks($links = false) {
-    $this_links = array()
+    $this_links = array();
     foreach($links as $url) {
       $link = \MusicFestival\Link\Factory::fromUrl($url);
       if($link->isValid()) {
