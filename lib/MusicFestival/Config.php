@@ -15,7 +15,7 @@ class Config {
 
   function __construct() {
     $this->settings = \Symfony\Component\Yaml\Yaml::parse(\MUSICFESTIVAL_DIR.'/config/settings.yml');
-
+	print_r($this->settings);
     $this->lastfm = new \Lastfm\Client($this->settings['lastfm']['key']);
     $this->lastfm->setTransport(new \MusicFestival\Transport\CachedCurl());
 
