@@ -23,7 +23,7 @@ class FactoryTest extends \PHPUnit_Framework_TestCase {
    * @todo Implement testFromUrl().
    */
   public function testFromUrl() {
-    $linkClass = $this->getMockClass('Link');
+    $linkClass = $this->getMockClass('Link', 'isMatchingUrl');
 
     $linkClass::staticExpects($this->any())
           ->method('isMatchingUrl')
