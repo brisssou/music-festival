@@ -109,7 +109,7 @@ class Track extends \MusicFestival\Entity {
         $this_links[] = $link;
       }
     }
-    $this->setAttribute(self::ATTR_LINKS) = $this_links;
+    $this->setAttribute(self::ATTR_LINKS, $this_links);
   }
 
   /**
